@@ -24,12 +24,14 @@ public class Robot extends IterativeRobot {
 	public static Chassis chassis;
 
     Command autonomousCommand;
+    Command Autonomous;
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
+    	RobotMap.init();
 		oi = new OI();
 		chassis = new Chassis();
         // instantiate the command used for the autonomous period
@@ -42,7 +44,7 @@ public class Robot extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        if (autonomousCommand != null) autonomousCommand.start();
+        if (Autonomous != null) Autonomous.start();
     }
 
     /**
